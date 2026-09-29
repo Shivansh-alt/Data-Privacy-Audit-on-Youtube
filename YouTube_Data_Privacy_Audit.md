@@ -9,7 +9,8 @@
 
 ## 1. Disclaimer and Methodology
 
-This audit is based only on **publicly available information**: YouTube/Google privacy documentation, regulatory actions, court records, and press and advocacy-group reporting. It is **not** a technical penetration test, and no internal YouTube systems were accessed. Risk ratings are my own qualitative judgment, not legal conclusions. This document is not legal advice.
+This audit is based only on **publicly available information**: 
+This document is not legal advice.
 
 **Approach**
 
@@ -23,18 +24,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ## 2. Executive Summary
 
-| Area | Risk Level | Headline Finding |
-|---|---|---|
-| Children's data (COPPA) | 🔴 High | Record FTC settlement in 2019, plus a $30M class action settlement approved in January 2026 |
-| AI age estimation and profiling | 🔴 High | Behavioral inference of age; the appeal path requires ID, selfie, or card |
-| Cross-product data aggregation | 🟠 Medium-High | YouTube activity feeds a unified Google account and ad ecosystem |
-| Advertising and tracking | 🟠 Medium-High | Behavioral ad targeting is the core business model |
-| Client-side detection (ad-blocker) | 🟠 Medium | Alleged ePrivacy/GDPR conflict over scripts that inspect the user's browser |
-| Retention and deletion | 🟡 Medium | Defaults and granularity of controls vary by account and region |
-| Third-party and API data flows | 🟡 Medium | Embeds, API developers, and creators expand the exposure surface |
-| Transparency | 🟡 Medium | Limited disclosure on AI model accuracy, data retention for verification, and audits |
-
-**Bottom line:** YouTube offers a fairly rich set of privacy controls, but its exposure comes from **scale, behavioral profiling, and a history of enforcement around minors' data**. The biggest current risk is the growing use of viewing behavior to make sensitive inferences, such as a user's age.
+ YouTube offers a fairly rich set of privacy controls, but its exposure comes from **scale, behavioral profiling, and a history of enforcement around minors' data**. The biggest current risk is the growing use of viewing behavior to make sensitive inferences, such as a user's age.
 
 ---
 
@@ -55,7 +45,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ## 4. Detailed Findings
 
-### 4.1 Children's Privacy 🔴 High
+### 4.1 Children's Privacy  High
 
 **What happened**
 
@@ -77,7 +67,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.2 AI Age Estimation and Behavioral Inference 🔴 High
+### 4.2 AI Age Estimation and Behavioral Inference  High
 
 **What it is:** In the U.S., YouTube began rolling out an AI age-estimation model on **August 13, 2025**. Public reporting says it considers signals such as viewing habits, search behavior, and account age. Accounts flagged as possibly under 18 get protections (for example, limited ad personalization). Users who believe they were misclassified can verify their age through **government ID, a selfie, or a credit card**.
 
@@ -98,7 +88,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.3 Cross-Product Aggregation and Profiling 🟠 Medium-High
+### 4.3 Cross-Product Aggregation and Profiling  Medium-High
 
 - YouTube data is linked to a **Google Account** and can inform personalization and advertising across Google services, depending on user settings.
 - Watch and search history is a high-value behavioral dataset. Combined with other Google signals, it supports **detailed inference** about a person.
@@ -108,7 +98,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.4 Advertising and Tracking 🟠 Medium-High
+### 4.4 Advertising and Tracking  Medium-High
 
 - Behavioral advertising is the platform's core revenue mechanism, creating a structural incentive to collect more data.
 - Tracking relies on cookies, device identifiers, and account-level signals. Regulators in the EU and elsewhere require valid consent for non-essential tracking.
@@ -118,7 +108,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.5 Client-Side Ad-Blocker Detection 🟠 Medium
+### 4.5 Client-Side Ad-Blocker Detection  Medium
 
 - Privacy advocates have argued that YouTube's ad-blocker detection scripts, which inspect the user's browser environment, may require **prior consent under EU ePrivacy/GDPR rules** because they access information on the user's device.
 - The legal question has drawn complaints in Europe, and regulators' positions matter here. This item is a **regulatory-interpretation risk**, not an established violation.
@@ -127,7 +117,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.6 Retention, Deletion, and User Controls 🟡 Medium
+### 4.6 Retention, Deletion, and User Controls  Medium
 
 **Strengths**
 
@@ -144,7 +134,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.7 Third-Party, Creator, and API Data Flows 🟡 Medium
+### 4.7 Third-Party, Creator, and API Data Flows  Medium
 
 - Third-party developers using YouTube API services can access certain data, which creates downstream-misuse risk.
 - Creators can access audience analytics, and public comments and channel data can be scraped.
@@ -154,7 +144,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-### 4.8 Transparency and Accountability 🟡 Medium
+### 4.8 Transparency and Accountability  Medium
 
 - Limited public disclosure of AI model performance, verification-data handling, and enforcement effectiveness.
 - Shareholder and advocacy groups have noted the absence of public child-safety performance metrics.
@@ -179,40 +169,7 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-## 6. Risk Matrix
-
-| # | Finding | Likelihood | Impact | Priority |
-|---|---|---|---|---|
-| 1 | Children's data mishandling or mislabeling | High | High | **Critical** |
-| 2 | AI age-estimation misclassification and ID/biometric exposure | High | High | **Critical** |
-| 3 | Cross-product profiling and consent complexity | Medium | High | **High** |
-| 4 | Behavioral advertising and pre-consent tracking | Medium | High | **High** |
-| 5 | Ad-blocker detection legal exposure (EU) | Medium | Medium | **Medium** |
-| 6 | Retention and derived-data deletion gaps | Medium | Medium | **Medium** |
-| 7 | API and third-party misuse | Low-Medium | Medium | **Medium** |
-| 8 | Limited transparency and auditing | Medium | Medium | **Medium** |
-
----
-
-## 7. Prioritized Recommendations
-
-**Immediate (0-3 months)**
-1. Commission an independent audit of the age-estimation model and publish results.
-2. Provide a verification path that does not retain ID or biometrics, with verifiable deletion.
-3. Make privacy-enhanced embeds the default.
-
-**Near term (3-9 months)**
-4. Improve automated detection of child-directed content beyond creator self-declaration.
-5. Consolidate privacy controls and show which signals feed which products.
-6. Document deletion behavior for derived data and backups.
-
-**Ongoing**
-7. Publish regular transparency reports (privacy incidents, AI accuracy, COPPA enforcement).
-8. Regularly audit API developers and creator financial-data access.
-
----
-
-## 8. Practical Tips for Users
+## 6. Practical Tips for Users
 
 - Review **My Activity** and turn off or auto-delete watch and search history.
 - Turn off **ad personalization** in your Google account settings.
@@ -222,24 +179,3 @@ This audit is based only on **publicly available information**: YouTube/Google p
 
 ---
 
-## 9. Limitations
-
-- No access to internal systems, code, or data-flow documentation.
-- Some points (for example, exact retention periods and model behavior) come from press and advocacy reporting, and YouTube's current documentation may differ.
-- Practices and regulations change quickly. Verify against YouTube's and Google's current privacy policy before relying on any specific claim.
-
----
-
-## 10. Sources
-
-- WHYY / CBS News / Fortune: coverage of the 2019 FTC and New York settlement ($170M) with Google/YouTube over COPPA
-- Courthouse News (January 13, 2026): final approval of the $30M YouTube children's privacy class settlement
-- Hackread (January 5, 2026), citing the U.S. DOJ: Disney's $10M COPPA penalty over YouTube video labeling
-- Dexerto and Pocket-lint: coverage of YouTube's U.S. AI age-estimation rollout (August 13, 2025) and expert concerns, including EPIC
-- eMarketer: coverage of age-verification backlash and appeal-by-ID/credit-card process
-- National Law Review: analysis of GDPR challenges to YouTube's ad-blocker detection
-- Alphabet 2025 Proxy Statement (SEC filing): shareholder proposal discussing children's data and the absence of public child-safety metrics
-
----
-
-*Prepared as an educational, public-information analysis. Not legal advice.*
