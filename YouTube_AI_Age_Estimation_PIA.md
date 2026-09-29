@@ -81,22 +81,7 @@ A user who believes they were misclassified can restore adult status by verifyin
 
 ---
 
-## 5. Legal and Regulatory Considerations
-
-| Framework | Relevant issue |
-|---|---|
-| GDPR (EU/EEA) | Profiling and inference; lawful basis; purpose limitation; data minimization; special handling where biometric data is used for identification; DPIA obligations for large-scale profiling |
-| UK GDPR / Age-Appropriate Design Code | Age assurance expectations, high-privacy defaults for children |
-| COPPA (U.S.) | Parental consent for under-13 data; YouTube's history of enforcement makes this area sensitive |
-| CCPA/CPRA (California) | Rights over sensitive personal information; disclosure of inferences |
-| India DPDP Act, 2023 | Consent, purpose limitation, and heightened obligations for children's data |
-| Biometric privacy laws (for example, Illinois BIPA) | Applicable if selfie-based verification involves biometric identifiers |
-
-**Tension to note.** Child-safety rules encourage more age assurance, while privacy rules encourage less data collection. The system must satisfy both.
-
----
-
-## 6. Privacy Risk Register
+## 5. Privacy Risk Register
 
 Likelihood and impact are rated Low / Medium / High. The score is a qualitative product of the two.
 
@@ -150,24 +135,7 @@ Likelihood and impact are rated Low / Medium / High. The score is a qualitative 
 - **Likelihood:** Medium. **Impact:** High.
 - **Score:** High.
 
-### Risk summary
-
-| ID | Risk | Score |
-|---|---|---|
-| R3 | Coerced disclosure of ID/biometric data | Critical |
-| R1 | Sensitive inference from behavior | High |
-| R2 | False positives | High |
-| R4 | Unclear retention/reuse of verification data | High |
-| R9 | Security of verification data | High |
-| R10 | Children's data handling errors | High |
-| R5 | Function creep | Medium-High |
-| R6 | Bias and discrimination | Medium-High |
-| R7 | Lack of transparency | Medium-High |
-| R8 | Chilling effect | Medium |
-
----
-
-## 7. Mitigation Strategies
+## 6. Mitigation Strategies
 
 ### 7.1 Design and technical measures
 
@@ -196,7 +164,7 @@ Likelihood and impact are rated Low / Medium / High. The score is a qualitative 
 
 ---
 
-## 8. Residual Risk Assessment
+## 7. Residual Risk Assessment
 
 Residual risk is the risk that remains if the mitigations above are fully implemented.
 
@@ -217,54 +185,14 @@ Residual risk is the risk that remains if the mitigations above are fully implem
 
 ---
 
-## 9. Open Questions
-
-These could not be answered from public sources and should be resolved in a full internal assessment:
-
-1. What are the model's measured accuracy and false-positive rates, overall and by demographic group?
-2. How long are verification artifacts retained, and by whom (YouTube, Google, or vendors)?
-3. Are any derived age signals used outside the protective settings?
-4. How are minors under 13 handled when flagged, and how does this interact with COPPA obligations?
-5. What independent audits, if any, have been conducted?
-6. What alternatives to ID, selfie, or card exist in each region?
-
----
-
-## 10. Recommendations Summary
+## 8. Recommendations Summary
 
 **Priority 1 (before or immediately)**
 1. Provide at least one verification route that does not require ID or biometrics.
 2. Enforce and publicly document immediate deletion of verification data.
 3. Publish accuracy and error-rate data, and commission an independent audit.
 
-**Priority 2 (near term)**
-4. Technically restrict the age signal to protective purposes only.
-5. Give users clear explanations and a fast human-review path.
-6. Apply high-privacy defaults to all flagged accounts.
-
-**Priority 3 (ongoing)**
-7. Maintain regular transparency reporting.
-8. Continue bias testing and stakeholder consultation.
-9. Re-run this PIA whenever the model, signals, or verification methods change.
-
----
-
-## 11. Sign-off Template
-
-| Role | Name | Decision | Date |
-|---|---|---|---|
-| Assessment author | | | |
-| Privacy officer / DPO | | | |
-| System owner | | | |
-| Legal counsel | | | |
-
----
-
-## 12. Sources
-
-- Dexerto and Pocket-lint: reporting on the August 13, 2025 U.S. rollout of YouTube's AI age estimation, the signals used, and expert concerns (including EPIC)
-- eMarketer: reporting on backlash, applied restrictions, and the ID/credit card appeal process
-- Coverage of YouTube's statement that ID or card data from verification would not be stored for advertising purposes
-- News coverage of the 2019 FTC/New York settlement ($170M) and the January 2026 $30M class settlement, cited for the children's-data enforcement context
-
-*Prepared as an educational, public-information analysis. Not legal advice.*
+**Priority 2 (ongoing)**
+4. Maintain regular transparency reporting.
+5. Continue bias testing and stakeholder consultation.
+6. Re-run this PIA whenever the model, signals, or verification methods change.
