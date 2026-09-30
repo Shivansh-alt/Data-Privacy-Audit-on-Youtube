@@ -360,4 +360,4 @@ Review this plan at least annually, and after every significant incident or chan
 
 ---
 
-*This plan is a model for educational and planning purposes. Legal requirements change and vary by jurisdiction. Confirm obligations with qualified counsel before relying on any deadline or threshold.*
+
