@@ -77,11 +77,3 @@ The most effective fixes were product changes: content designation, restricted a
 
 ---
 
-## 6. Sources
-
-- FTC press release (September 2019): Google and YouTube to pay a record $170 million for alleged violations of children's privacy law
-- Gibson Dunn, Dorsey, InfoLawGroup, and Mondaq legal analyses of the complaint and settlement terms
-- Kidscreen reporting on YouTube's statements to toy companies
-- Courthouse News (January 2026) and other coverage of the $30 million class settlement, and reporting on the December 2025 Disney COPPA penalty
-
-*Educational, public-information analysis. Not legal advice.*
