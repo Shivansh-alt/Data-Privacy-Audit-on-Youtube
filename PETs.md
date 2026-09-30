@@ -88,26 +88,6 @@ No single tool gives complete privacy. Each one protects against specific threat
 
 ---
 
-## Comparison in Brief
-
-- **Best for hiding browsing from your ISP or public Wi-Fi:** a reputable VPN.
-- **Best for real anonymity from websites and trackers:** Tor Browser.
-- **Best for private conversations:** Signal.
-- **Best against account-based tracking (such as staying logged in to a platform):** none of the above by itself. Use separate browser profiles, logged-out browsing, tracker blockers, and the platform's own privacy settings.
-
----
-
-## Practical Recommendations
-
-1. Start with your threat model, then pick the tool that matches it.
-2. Use Signal for sensitive conversations, and confirm E2EE is on for anything else you use.
-3. Use a well-audited paid VPN for public Wi-Fi and ISP privacy, not for anonymity.
-4. Use Tor Browser when anonymity matters, and never log in to personal accounts within it.
-5. Layer tools with basic hygiene: strong unique passwords, two-factor authentication, software updates, and tracker blocking.
-6. Be skeptical of marketing claims such as "military-grade" or "100% anonymous." Look for open source code, independent audits, and a transparent business model.
-
----
-
 ## Bottom Line
 
 PETs are effective when matched to a specific threat and used correctly, and ineffective when treated as a single switch for "privacy." VPNs protect the network path, Tor protects identity, and secure messengers protect message content. None of them stop a platform from tracking you once you are signed in to it.
