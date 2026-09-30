@@ -47,12 +47,3 @@ YouTube has no standalone privacy policy for general users. It falls under the *
 5. Consolidate **children and teen information** with region-specific age rules.
 
 ---
-
-## 4. Sources
-
-- Google Privacy Policy (policies.google.com) and the PDF edition dated May 2026
-- How Google retains data we collect (policies.google.com/technologies/retention)
-- Google blog on default auto-delete, including YouTube history
-- Gemini Apps Privacy Hub (Google Support)
-
-*Educational, public-information analysis. Verify against the current policy text before relying on any specific point.*
